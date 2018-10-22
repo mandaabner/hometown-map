@@ -92,11 +92,38 @@
 
 
 
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-	    crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet-src.js"></script>
 	<script>
 		// This is a comment in JavaScript
+
+
+
+		// Location marker code example
+		var coords = [coords1, coords2]
+		locationName = [location1Name, location2Name]
+		locationDetails = [location1Details, location2Details];
+
+		var coords1 = [37.586835, -84.2890395],
+			location1Name = "Madison Southern High School",
+			location1Details = "My high school";
+
+		var coords2 = [37.573014, -84.292309],
+			location2Name = "Berea College",
+			location2Details = "My first college class";
+
+
+		var location1Tooltip = "<b>" + location1Name + "</b><br>" +
+			"<b>Details</b>: " + location1Details;
+
+		L.marker(coords[0]).addTo(map) //getting an error here, but not sure what is wrong...
+			.bindTooltip(location1Tooltip);
+
+		var location2Tooltip = "<b>" + location2Name + "</b><br>" +
+			"<b>Details</b>: " + location2Details;
+
+		L.marker(coords[1]).addTo(map)
+			.bindTooltip(location2Tooltip);
 
 		// map options
 		var options = {
@@ -124,7 +151,6 @@
 			.openTooltip();
 	</script>
 
-	<a data-flickr-embed="true"  href="https://www.flickr.com/gp/27770223@N05/StN4r3" title="ooo"><img src="https://farm4.staticflickr.com/3229/2985864908_2d2c227de0_n.jpg" width="320" height="213" alt="ooo"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 </body>
 
